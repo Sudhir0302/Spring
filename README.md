@@ -5,3 +5,7 @@
 3.DI -> Dependency Injection means to provide (injecting) other class objects in to a class using annotations such as @Bean, @Autowired ,etc.
 
 4.@component -> an object is created in ioc when it is annotated by @component annotation.By default the object is singleton object(bean).
+
+5.@Qualifier("bean_name") -> to specify which bean to use.(Note: if both qualifier and primary there means, qualifier gets the first preference)
+
+6.@Primary -> to specify that is the first preferred bean
