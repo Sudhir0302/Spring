@@ -9,3 +9,5 @@
 5.@Qualifier("bean_name") -> to specify which bean to use.(Note: if both qualifier and primary there means, qualifier gets the first preference)
 
 6.@Primary -> to specify that is the first preferred bean
+
+7.@Controller -> It is used to define a class as a controller in the Spring MVC framework, which listens for incoming HTTP requests and handles them. It is a specialized component in the Spring framework, typically used to create web applications where HTTP requests are mapped to handler methods in the controller.
