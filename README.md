@@ -13,3 +13,7 @@
 7.@Controller -> It is used to define a class as a controller in the Spring MVC framework, which listens for incoming HTTP requests and handles them. It is a specialized component in the Spring framework, typically used to create web applications where HTTP requests are mapped to handler methods in the controller.
 
 8.Dispatcher servlet - to map requests to sepecific controllers in spring.It is known as FrontController
+
+9.@RestController -> To send data as json or data not as pages
+
+10.@CrossOrigin -> To enable cors for a specific port
