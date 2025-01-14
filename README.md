@@ -18,4 +18,12 @@
 
 10.@CrossOrigin -> To enable cors for a specific port
 
-21.Jackson - It is the library responsible for transforming java objects into json format
+21.Jackson -> It is the library responsible for transforming java objects into json format
+
+22.ORM -> Object Relational Mapping which means creating a table in db with the help of class in java.
+
+23.@Entity -> To define a class as entity (table) to store data in db
+
+24.@Id -> Primary key 
+
+25.@Query -> To write JPQL (Java Persistence Query Language).
