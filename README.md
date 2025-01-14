@@ -17,3 +17,5 @@
 9.@RestController -> To send data as json or data not as pages
 
 10.@CrossOrigin -> To enable cors for a specific port
+
+21.Jackson - It is the library responsible for transforming java objects into json format
