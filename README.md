@@ -27,3 +27,21 @@
 24.@Id -> Primary key 
 
 25.@Query -> To write JPQL (Java Persistence Query Language).
+
+26.Spring AOP -> To maintain activity logs, validation(security) i.e for example validating the request before executing a method, etc
+
+27.@Aspect -> Specifies the method which acts as a aspect
+
+28.Advice -> Advice defines the action taken by an aspect at a specific join point. It determines what and when the aspect should do something.
+
+29.Types of advice:
+    Before Advice: Runs before the method execution.
+    After Returning Advice: Runs after the method executes successfully.
+    After Throwing Advice: Runs when the method throws an exception.
+    After (Finally) Advice: Runs after the method execution, regardless of its outcome.
+    Around Advice: Wraps the method execution, allowing complete control over whether and how it executes.
+
+30.Join Point -> eg.A method like getUser() in the UserService class could be a join point.
+
+31.Pointcut -> A pointcut is an expression that defines where the advice should be applied , eg.@Pointcut("execution(* com.example.service.*.*(..))")
+public void serviceMethods() {}.
