@@ -45,3 +45,9 @@
 
 31.Pointcut -> A pointcut is an expression that defines where the advice should be applied , eg.@Pointcut("execution(* com.example.service.*.*(..))")
 public void serviceMethods() {}.
+
+32.Jackson is the main library responsible for converting JSON data to Java objects (Deserialization) and Java objects to JSON (Serialization) in Spring Boot.
+
+33.@RequestBody annotation tells Spring Boot to convert the JSON payload into a Java object.
+
+34.A payload refers to the actual data that is transmitted in a request or response. In the context of APIs, the payload is usually the body of an HTTP request or response that carries the necessary information.
