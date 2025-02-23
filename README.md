@@ -51,3 +51,11 @@ public void serviceMethods() {}.
 33.@RequestBody annotation tells Spring Boot to convert the JSON payload into a Java object.
 
 34.A payload refers to the actual data that is transmitted in a request or response. In the context of APIs, the payload is usually the body of an HTTP request or response that carries the necessary information.
+
+35.ORM stores object data into the table in db directly without the need of raw sql query.
+
+36.ORM is a concept or technique that maps objects in a programming language to database tables.
+
+37.Hibernate is a framework that provides an implementation of ORM in Java.
+
+38.save is depricated since hibernate v6.Instead we can use persist to save data in db.
