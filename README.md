@@ -59,3 +59,5 @@ public void serviceMethods() {}.
 37.Hibernate is a framework that provides an implementation of ORM in Java.
 
 38.save is depricated since hibernate v6.Instead we can use persist to save data in db.
+
+39.DispatcherServlet is the heart of request processing in Spring Boot.It acts as a front controller, routing requests to the appropriate controllers.
