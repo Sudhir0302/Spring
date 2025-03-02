@@ -93,23 +93,30 @@ So,here Polymorphism comes into play where the classes like MyuserDetailsService
     BeanFactory (Lightweight)
     ApplicationContext (Advanced, commonly used in Spring Boot) - Spring Boot by default uses ApplicationContext.
     
-45.Spring IOC Workflow  - SpringSecurity
-        +------------------------------------------------------------+
-        |                 Spring IOC Container                       |
-        +------------------------------------------------------------+
-        |   1. MyUserDetailsService (implements UserDetailsService)  |
-        |   2. UserPrincipal (implements UserDetails)                |
-        |   3. UserRepo (JPA Repository)                             |
-        +------------------------------------------------------------+
-                             ⬆
-                             | (Spring creates and manages these beans)
-                             ⬇
-        +------------------------------------------------------+
-        |       Application Code (Uses @Autowired)             |
-        +------------------------------------------------------+
-        | - Calls MyUserDetailsService.loadUserByUsername()    |
-        | - MyUserDetailsService needs UserRepo object         |
-        | - Spring injects UserRepo into MyUserDetailsService  |
-        | - MyUserDetailsService returns UserPrincipal         |
-        | - Spring Security uses UserPrincipal for Auth        |
-        +------------------------------------------------------+
+45.Spring IOC Workflow  - (check SpringSecurity folder)
+Spring IOC Container                       
+    1. MyUserDetailsService (implements UserDetailsService)  
+    2. UserPrincipal (implements UserDetails)                
+    3. UserRepo (JPA Repository)        
+
+(Spring creates and manages these beans)
+Application Code (Uses @Autowired)            
+    Calls MyUserDetailsService.loadUserByUsername()    
+    MyUserDetailsService needs UserRepo object         
+    Spring injects UserRepo into MyUserDetailsService  
+    MyUserDetailsService returns UserPrincipal         
+    Spring Security uses UserPrincipal for Auth        
+
+47.DaoAuthenticationProvider is a built-in authentication provider that fetches user details from a database via a UserDetailsService. It verifies user credentials and grants access if they are correct.
+    How DaoAuthenticationProvider Works?
+    Step 1: *User Tries to Log In
+            *The user enters username and password.
+            *The request is sent to Spring Security.
+    Step 2: *Spring Security Calls DaoAuthenticationProvider
+            *It retrieves user details using UserDetailsService.
+            *It verifies if the username exists in the database.
+            *It compares passwords (plain or hashed).
+    Step 3: *Authentication Result
+            *If authentication succeeds → User is granted access.
+            *If authentication fails → Access is denied.
+
