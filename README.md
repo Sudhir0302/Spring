@@ -61,3 +61,13 @@ public void serviceMethods() {}.
 38.save is depricated since hibernate v6.Instead we can use persist to save data in db.
 
 39.DispatcherServlet is the heart of request processing in Spring Boot.It acts as a front controller, routing requests to the appropriate controllers.
+
+40.@Configuration - used to define and manage bean objects(class objects) within springcontainer.
+Working:
+    *When a class is annotated with @Configuration, Spring Boot treats it as a configuration class.
+    *It allows you to define beans using @Bean inside it.
+    *The objects (beans) created inside the @Configuration class are managed by Spring's IoC (Inversion of Control) container.
+    *Instead of manually creating objects using new, Spring Boot automatically injects these objects where required.
+    so we can use @Autowired to use a class's objects instead of using getBean().
+    
+**similary for these @Component, @Service, or @Repository, Spring Boot automatically registers the class as a bean.**
