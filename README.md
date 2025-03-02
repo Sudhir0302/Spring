@@ -71,3 +71,45 @@ Working:
     so we can use @Autowired to use a class's objects instead of using getBean().
     
 **similary for these @Component, @Service, or @Repository, Spring Boot automatically registers the class as a bean.**
+
+41.When a object(referrence type) is annotated with @Autowired means ,springboot automatically injects the desired bean(object).If want a different bean type(object type) means use @Qualifier.
+
+42.Working of Spring Security 
+    *User tries to log in (Spring Security intercepts the request).
+    *Spring calls UserDetailsService.loadUserByUsername() (because DaoAuthenticationProvider needs to fetch user details).
+    *Spring sees @Service MyUserDetailsService (which implements UserDetailsService).
+    *Spring injects MyUserDetailsService where UserDetailsService is needed.
+    *Inside MyUserDetailsService, we return new UserPrincipal(user);.
+    *Spring sees UserPrincipal implements UserDetails, so it accepts it.
+    *Spring Security then compares the password and authenticates the user.
+
+so UserDetailsService is an interface and then MyUserDetailsService is a class which implements UserDetailsService inteface . so that it must override the methods in that interface and then inside MyuserDetailsService we're overriding another interface UserDetails which returns an object of UserDetails , so we need to create a class UserPrinicpal which implements UserDetails.
+Then finaly the UserDetailsService returns object of UserDetailsService to the authProvider method and then the springsecurity does the rest to authenticate the user.
+So,here Polymorphism comes into play where the classes like MyuserDetailsService which implements UserDetailsService and UserPrinicpal which implements UserDetails are managedby spring IOC and DI ,to call desired overridden method while executing.
+
+43.IOC Container holds all objects (beans) in a centralized place.IOC -  a warehouse that stores ready-made objects (beans).Whenever an object is needed, Spring retrieves and injects it.
+
+44.There are two types of IOC Containers in Spring:
+    BeanFactory (Lightweight)
+    ApplicationContext (Advanced, commonly used in Spring Boot) - Spring Boot by default uses ApplicationContext.
+    
+45.Spring IOC Workflow  - SpringSecurity
+        +------------------------------------------------------------+
+        |                 Spring IOC Container                       |
+        +------------------------------------------------------------+
+        |   1. MyUserDetailsService (implements UserDetailsService)  |
+        |   2. UserPrincipal (implements UserDetails)                |
+        |   3. UserRepo (JPA Repository)                             |
+        +------------------------------------------------------------+
+                             ⬆
+                             | (Spring creates and manages these beans)
+                             ⬇
+        +------------------------------------------------------+
+        |       Application Code (Uses @Autowired)             |
+        +------------------------------------------------------+
+        | - Calls MyUserDetailsService.loadUserByUsername()    |
+        | - MyUserDetailsService needs UserRepo object         |
+        | - Spring injects UserRepo into MyUserDetailsService  |
+        | - MyUserDetailsService returns UserPrincipal         |
+        | - Spring Security uses UserPrincipal for Auth        |
+        +------------------------------------------------------+
