@@ -119,4 +119,4 @@ Application Code (Uses @Autowired)
     Step 3: *Authentication Result
             *If authentication succeeds → User is granted access.
             *If authentication fails → Access is denied.
-
+48.Tomcat is server which uses java servlet api (classes) and it manages servlets request,response and sends it to the dispatcher servlet in springboot in which dispatcher servlet sends the request to the specific routes(controllers).
